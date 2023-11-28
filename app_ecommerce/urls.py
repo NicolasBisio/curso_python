@@ -16,8 +16,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from app_ecommerce.views import create_user
+from app_ecommerce.views import create_user, show_users
 
 urlpatterns = [
-    path('crear_usuario', create_user),
+    path('create_user/', create_user),
+    path('show_users/', show_users),
 ]

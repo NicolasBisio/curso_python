@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+
+{% block cambio %}
+    {% for user in users %}
+        <h6>Usuario: {{user.name}} {{user.last_name}} - {{user.email}}</h6>
+    {% endfor %}
+{% endblock %}

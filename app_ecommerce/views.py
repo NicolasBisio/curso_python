@@ -10,4 +10,12 @@ def create_user(request):
         "nombre": new_user.name
         }
 
-    return render(request, "index.html", context)
+    return redirect('/app/show_users')
+
+def show_users(request):
+    users = User.objects.all()
+    context = {
+        "users": users
+    }
+
+    return render(request, 'app_ecommerce/users.html', context)
