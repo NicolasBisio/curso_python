@@ -10,7 +10,6 @@ class User_Form_Search(forms.Form):
     
 class Product_Form(forms.Form):
     title = forms.CharField()
-    description = forms.CharField()
     price = forms.DecimalField()
 
 class Product_Form_Search(forms.Form):

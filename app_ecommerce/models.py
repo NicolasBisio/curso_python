@@ -10,8 +10,7 @@ class User(models.Model):
         return f"{self.last_name}, {self.name}"
 
 class Product(models.Model):
-    name = models.CharField(max_length=255)
-    description = models.TextField()
+    title = models.CharField(max_length=255)
     price = models.DecimalField(max_digits=10, decimal_places=2)
 
     def __str__(self):
