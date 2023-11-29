@@ -16,9 +16,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from app_ecommerce.views import create_user, show_users
+from app_ecommerce.views import create_user, show_users, search_users
 
 urlpatterns = [
     path('create_user/', create_user),
     path('show_users/', show_users),
+    path('search_users/', search_users),
+    #path('create_product/', create_product),
+    #path('show_product/', show_product),
+    #path('search_product/', search_product),
+    #path('create_cart/', create_cart),
+    #path('show_cart/', show_cart),
+    #path('search_cart/', search_cart),
 ]
