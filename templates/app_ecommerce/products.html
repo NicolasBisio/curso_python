@@ -3,7 +3,11 @@
 {% block dinamic %}
 
 <div>
-    <form action="/app/search_users" method="GET">
+    <h1>Productos</h1>
+    <br>
+    <h4>Ingrese el nombre del producto:</h4>
+    <br>
+    <form action="/app/search_products" method="GET">
 
         {{ form.as_p }}
 
@@ -12,9 +16,16 @@
     </form>
 </div>
 
-{% for user in users %}
-<h5>Usuario: {{user.name}} {{user.last_name}}</h5>
-<p> Correo electrónico: {{user.email}}</p>
+<br>
+<br>
+
+<h4>Resultados de la búsqueda</h4>
+
+<br>
+
+{% for product in products %}
+<h6>Productos: {{product.title}}</h6>
+<p>{{product.price}}</p>
 
 {% endfor %}
 {% endblock %}

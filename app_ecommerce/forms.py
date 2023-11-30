@@ -16,8 +16,9 @@ class Product_Form_Search(forms.Form):
     title = forms.CharField()
 
 class Cart_Form(forms.Form):
-    user = forms.CharField()
+    cart_user = forms.CharField()
     products = forms.CharField()
+    total = forms.DecimalField()
 
 class Cart_Form_Search(forms.Form):
-    user = forms.CharField()
+    cart_user = forms.CharField()

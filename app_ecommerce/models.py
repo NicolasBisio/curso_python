@@ -14,11 +14,12 @@ class Product(models.Model):
     price = models.DecimalField(max_digits=10, decimal_places=2)
 
     def __str__(self):
-        return f"{self.name} - ${self.price}"
+        return f"{self.title} - ${self.price}"
 
 class Cart(models.Model):
-    user = models.CharField(max_length=100)
+    cart_user = models.CharField(max_length=100)
     products = models.CharField(max_length=200)
+    total = models.DecimalField(max_digits=10, decimal_places=2, default=0)
 
     def __str__(self):
-        return f"Cart of {self.user}"
+        return f"Cart of {self.cart_user}"
