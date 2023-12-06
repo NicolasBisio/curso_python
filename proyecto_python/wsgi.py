@@ -1,5 +1,5 @@
 """
-WSGI config for tercera_pre_entrega project.
+WSGI config for proyecto_python project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'tercera_pre_entrega.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'proyecto_python.settings')
 
 application = get_wsgi_application()
