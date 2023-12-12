@@ -56,11 +56,10 @@ def user_update(request):
         if form.is_valid():
             data = form.cleaned_data
             user.email = data["email"]
-            user.last_name = data["last_name"]
             user.save()
             return redirect("/app/show_products/")
 
-    form = UserUpdateForm(initial={"email": user.email, "last_name": user.last_name})
+    form = UserUpdateForm(initial={"email": user.email})
     context = {
         "form": form
     }
