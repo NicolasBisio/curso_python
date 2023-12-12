@@ -3,10 +3,6 @@ from django.http import HttpResponse
 from app_ecommerce.models import User, Product, Cart
 from app_ecommerce.forms import User_Form, User_Form_Search, Product_Form, Product_Form_Search, Cart_Form, Cart_Form_Search
 
-# Index
-def show_index(request):
-    return render(request, "app_ecommerce/index.html")
-
 # Users Views
 def create_user(request):
     if request.method == "POST":

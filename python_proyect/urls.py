@@ -18,9 +18,10 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-from python_proyect.views import about_me
+from python_proyect.views import about_me, show_index
 
 urlpatterns = [
+    path('', show_index),
     path('admin/', admin.site.urls),
     path('about/', about_me),
     path('app/', include('app_ecommerce.urls')),
