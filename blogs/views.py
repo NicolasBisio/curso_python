@@ -12,10 +12,12 @@ def create_blog(request):
                             subtitle = data["subtitle"], 
                             body = data["body"], 
                             author = data["author"], 
-                            date = data["date"],
-                            image = data["image"],)
+                            date = data["date"],)
+                            #image = data["image_URL"],)
             new_blog.save()
             return redirect("/blogs/show_blogs/")
+        else:
+            print(blog.errors)
 
     blog_form = Create_Blog_Form()
     context = {
@@ -31,3 +33,12 @@ def show_blogs(request):
     }
 
     return render(request, 'blogs/show_blogs.html', context)
+
+def search_blogs(request):
+    title = request.GET["title"]
+    blogs = Blog.objects.filter(title__icontains=title)
+    context = {
+        "blogs": blogs,
+        "form": Blog_Form_Search(),
+    }
+    return render(request, "blogs/show_blogs.html", context)

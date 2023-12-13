@@ -5,9 +5,9 @@ class Blog(models.Model):
     subtitle = models.CharField(max_length=200)
     body = models.TextField()
     author = models.CharField(max_length=100)
-    date = models.DateField()
-    image = models.ImageField(upload_to='blog_images')
-
+    date = models.CharField(max_length=100)
+    #image_URL = models.CharField(max_length=100)
+    
     def __str__(self):
         return self.title
     
