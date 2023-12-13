@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block dinamic %}
+
+<div>
+    <h1>The Flag's Blog</h1>
+    <br>
+    <h4>Ingrese el nombre del posteo:</h4>
+    <br> 
+    <form action="/blogs/search_blogs/" method="GET">
+
+        {{ form.as_p }}
+
+        <input type="submit" value="Buscar">
+
+    </form>
+</div>
+
+<br>
+<br>
+
+<h4>Resultados de la búsqueda</h4>
+<h5>Posteos relacionados:</h5>
+
+{% for blog in blogs %}
+<br>
+<p><strong>{{ blog.title }}</strong></p>
+<p>Autor: {{ blog.author }}</p>
+<p>Fecha: {{ blog.date }}</p>
+
+{% endfor %}
+{% endblock %}
