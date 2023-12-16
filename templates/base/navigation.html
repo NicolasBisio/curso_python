@@ -20,17 +20,19 @@
                 </li>
 
                 <li class="nav-item"><a class="nav-link active" aria-current="page" href="/about/">Nosotros</a></li>
-                
+
                 {% if user.is_authenticated %}
                 <li class="nav-item">
-                    <p class="nav-link active" aria-current="page" style="margin: 0%">User: {{ user.get_username }}</p>
+                    <p class="nav-link active" aria-current="page" style="margin: 0%">
+                        <a href="/accounts/profile/">User: {{ user.get_username }}</a>
+                    </p>
                 </li>
                 <img style="height: 40px" src="{{ user.avatar.imagen.url }}" alt="avatar">
                 <a class="btn btn-primary" href="/accounts/logout/">Logout</a>
                 {% else %}
                 <a class="btn btn-primary" href="/accounts/login/">Login</a>
                 {% endif %}
-                
+
             </ul>
         </div>
     </div>

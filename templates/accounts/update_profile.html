@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block dinamic %}
+
+<h1>The Flag's Blog</h1>
+<br>
+<h4>Actualizar perfil</h4>
+<br>
+
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Actualizar">
+
+</form>
+
+<br>
+
+<p>
+    <a href="/accounts/profile/">Volver</a>
+</p>
+
+<br>
+<br>
+
+{% endblock %}

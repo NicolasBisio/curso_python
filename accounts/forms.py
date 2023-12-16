@@ -12,10 +12,12 @@ class UserRegisterForm(UserCreationForm):
         
 class UserUpdateForm(UserChangeForm):
     email = forms.EmailField()
+    first_name = forms.CharField()
+    last_name = forms.CharField()
 
     class Meta:
         model = User
-        fields = ("email",)
+        fields = ("email", "first_name", "last_name")
 
 class AvatarUpdateForm(forms.ModelForm):
     class Meta:

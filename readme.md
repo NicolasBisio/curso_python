@@ -15,4 +15,5 @@ python manager.py runserver
 
 ## Testing
 
-Para probar la app, debe ingresar al servidor HTTP proporcionado en la terminal. Una vez abierto el navegador, puede recorrer las utilidades enunciadas en cada uno de los elementos de la barra de navegación. Si lo desea, puede acceder a la página de inicio a través del botón 'Home' o 'E-Commerce'.
+Ingresando al siguiente link, puede consultar un módulo de testing diseñado para probar la app: 
+https://docs.google.com/spreadsheets/d/1Uy02barq4vHEt10XCNKzrZOC_6T3MA73K-DrwuCxX9I/edit?usp=sharing
