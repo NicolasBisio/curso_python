@@ -19,7 +19,6 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from python_proyect.views import about_me, show_index
-from django.views.defaults import page_not_found
 
 
 urlpatterns = [
@@ -30,6 +29,5 @@ urlpatterns = [
     path('accounts/', include('accounts.urls')),
     path('blogs/', include('blogs.urls')),
 ]
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
-handler404 = page_not_found
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

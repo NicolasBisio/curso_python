@@ -1,44 +1,28 @@
-from django.shortcuts import render, redirect
 from blogs.models import Blog
-from blogs.forms import Create_Blog_Form, Blog_Form_Search
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
+from django.contrib.auth.mixins import LoginRequiredMixin
 
-def create_blog(request):
-    if request.method == "POST":
-        
-        blog = Create_Blog_Form(request.POST)
-        if blog.is_valid():
-            data = blog.cleaned_data
-            new_blog = Blog(title = data["title"], 
-                            subtitle = data["subtitle"], 
-                            body = data["body"], 
-                            author = data["author"], 
-                            date = data["date"],)
-                            #image = data["image_URL"],)
-            new_blog.save()
-            return redirect("/blogs/show_blogs/")
-        else:
-            print(blog.errors)
+class Create_blog(CreateView):
+    model = Blog
+    success_url = "/blogs/pages"
+    template_name = "blogs/create_blog.html"
+    fields = ["title", "subtitle", "body", "author", "date"]
 
-    blog_form = Create_Blog_Form()
-    context = {
-        "form": blog_form
-    }
-    return render(request, "blogs/create_blog.html", context)
+class Show_blogs(ListView):
+    model = Blog
+    template_name = "blogs/show_blogs.html"
 
-def show_blogs(request):
-    blogs = Blog.objects.all()
-    context = {
-        "blogs": blogs,
-        "form": Blog_Form_Search(),
-    }
+class Blog_detail(LoginRequiredMixin, DetailView):
+    model = Blog
+    template_name = "blogs/blog_detail.html"
 
-    return render(request, 'blogs/show_blogs.html', context)
+class Update_blog(UpdateView):
+    model = Blog
+    success_url = "/blogs/pages"
+    template_name = "blogs/update_blog.html"
+    fields = ["title", "subtitle", "body", "author", "date"]
 
-def search_blogs(request):
-    title = request.GET["title"]
-    blogs = Blog.objects.filter(title__icontains=title)
-    context = {
-        "blogs": blogs,
-        "form": Blog_Form_Search(),
-    }
-    return render(request, "blogs/show_blogs.html", context)
+class Delete_blog(DeleteView):
+    model = Blog
+    success_url = "/blogs/pages"
+    template_name = "blogs/delete_blog.html"

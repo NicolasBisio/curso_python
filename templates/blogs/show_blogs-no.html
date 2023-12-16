@@ -9,7 +9,7 @@
     <br>
     <form action="/blogs/search_blogs/" method="GET">
 
-        <input type="text" name="title">
+        {{ form.as_p }}
 
         <input type="submit" value="Buscar">
 
@@ -17,18 +17,12 @@
 </div>
 
 <br>
-
-<p>
-    <a href="/blogs/create_blog/">Crear nuevo posteo</a>
-</p>
-
 <br>
 
 <h4>Resultados de la búsqueda</h4>
 <h5>Posteos relacionados:</h5>
 
-{% for blog in object_list %}
-
+{% for blog in blogs %}
 <table>
     <tr>
         <td><strong>{{ blog.title }}</strong></td>
@@ -45,13 +39,13 @@
 
 <table>
     <tr>
-        <td><a href="{% url 'blog_detail' blog.id %}">Detalles</a></td>
+        <td><a href="#">Detalles</a></td>
     </tr>
     <tr>
-        <td><a href="{% url 'update_blog' blog.id %}">Editar</a></td>
+        <td><a href="#">Editar</a></td>
     </tr>
     <tr>
-        <td><a href="{% url 'delete_blog' blog.id %}">Eliminar</a></td>
+        <td><a href="#">Eliminar</a></td>
     </tr>
 </table>
 
@@ -60,5 +54,8 @@
 
 {% endfor %}
 
+<p>
+    <a href="/blogs/create_blog/">Crear nuevo posteo</a>
+</p>
 
 {% endblock %}

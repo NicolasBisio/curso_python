@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block dinamic %}
+
+<form method="post" action="{% url 'show_blogs' %}">
+    {% csrf_token %}
+
+    ¿Está seguro que desea eliminar el blog: {{ object.title }}?
+
+    <button type="button" onclick="history.back()">Volver Atrás</button>
+    <input type="submit" value="Eliminar">
+
+</form>
+
+{% endblock %}

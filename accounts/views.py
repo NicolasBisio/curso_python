@@ -65,6 +65,7 @@ def user_update(request):
     }
     return render(request, "accounts/register.html", context)
 
+# Update Avatar
 @login_required
 def user_update_avatar(request):
     user = request.user
@@ -91,3 +92,9 @@ def user_update_avatar(request):
         "form": form
     }
     return render(request, "accounts/avatar.html", context)
+
+# Show user profile
+@login_required
+def user_profile(request):
+    user = request.user
+    
