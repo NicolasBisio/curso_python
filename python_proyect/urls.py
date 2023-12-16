@@ -25,7 +25,6 @@ urlpatterns = [
     path('', show_index),
     path('admin/', admin.site.urls),
     path('about/', about_me),
-    path('app/', include('app_ecommerce.urls')),
     path('accounts/', include('accounts.urls')),
     path('blogs/', include('blogs.urls')),
 ]
