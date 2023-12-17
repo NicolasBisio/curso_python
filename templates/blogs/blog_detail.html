@@ -2,22 +2,25 @@
 
 {% block dinamic %}
 
-<h1>The Flag's Blog</h1>
-<br>
+<div style="margin-left: 3rem;">
 
-<h4>{{ blog.title }}</h4>
-<h5>{{ blog.subtitle }}</h5>
-<p>{{ blog.body }}</p>
-<p>Autor: {{ blog.author }}</p>
-<p>Fecha: {{ blog.date }}</p>
+  <h2>{{ blog.title }}</h2>
+  <h4>{{ blog.subtitle }}</h4>
 
-<!-- Puedes mostrar la imagen si existe -->
-{% if blog.image %}
-<img src="{{ blog.image.url }}" alt="{{ blog.title }} Image">
-{% endif %}
+  <br>
 
-<p>
-  <a href="/blogs/pages/">Volver</a>
-</p>
+  <img style="height: 8rem;" src="{{ blog.image.url }}" alt="{{ blog.title }} Image">
+
+  <hr>
+
+  <p>{{ blog.body }}</p>
+  <p>Autor: {{ blog.author }}</p>
+  <p>Fecha: {{ blog.date }}</p>
+
+  <p>
+    <a href="/blogs/pages/">Volver</a>
+  </p>
+
+</div>
 
 {% endblock %}
