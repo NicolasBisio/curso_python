@@ -2,6 +2,8 @@
 
 {% block dinamic %}
 
+{% if user.is_authenticated %}
+
 <h1>The Flag's Blog</h1>
 <br>
 <h4>Crear un nuevo posteo:</h4>
@@ -16,10 +18,15 @@
 
 </form>
 
+{% else %}
+
+<h2>No tiene los permisos necesarios para realizar esta acción.</h2>
+
 <br>
 
 <p>
     <a href="/blogs/pages/">Volver</a>
 </p>
 
+{% endif %}
 {% endblock %}

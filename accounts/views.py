@@ -21,7 +21,7 @@ def user_login(request):
             if user:
                 login(request, user)
 
-        return redirect('/app/show_products/')
+        return redirect('/blogs/pages')
 
     form = AuthenticationForm()
     context = {
@@ -57,7 +57,7 @@ def user_update(request):
             data = form.cleaned_data
             user.email = data["email"]
             user.save()
-            return redirect("/app/show_products/")
+            return redirect("/blogs/pages")
 
     form = UserUpdateForm(initial={"email": user.email})
     context = {
