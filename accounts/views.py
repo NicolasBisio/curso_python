@@ -69,6 +69,7 @@ def user_update(request):
 @login_required
 def user_update_avatar(request):
     user = request.user
+    print(user.avatar)
     if request.method == "POST":
 
         form = AvatarUpdateForm(request.POST, request.FILES)
@@ -85,7 +86,7 @@ def user_update_avatar(request):
                 )
             avatar.save()
 
-            return redirect("/app/show_products/")
+            return redirect("/blogs/pages/")
 
     form = AvatarUpdateForm()
     context = {

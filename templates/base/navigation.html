@@ -27,10 +27,19 @@
                         <a href="/accounts/profile/">User: {{ user.get_username }}</a>
                     </p>
                 </li>
-                <img style="height: 40px" src="{{ user.avatar.imagen.url }}" alt="avatar">
-                <a class="btn btn-primary" href="/accounts/logout/">Logout</a>
+
+                {% if user.avatar.imagen.url %}
+                <li class="nav-item">
+                    <img style="height: 37px; margin-left: 8px; margin-right: 8px;" src="{{ user.avatar.imagen.url }}" alt="avatar">
+                </li>
+                <li class="nav-item">
+                    <a class="btn btn-primary" href="/accounts/logout/">Logout</a>
+                </li>
                 {% else %}
-                <a class="btn btn-primary" href="/accounts/login/">Login</a>
+                <li class="nav-item">
+                    <a class="btn btn-primary" href="/accounts/login/">Login</a>
+                </li>
+                {% endif %}
                 {% endif %}
 
             </ul>

@@ -16,4 +16,4 @@ python manager.py runserver
 ## Testing
 
 Ingresando al siguiente link, puede consultar un módulo de testing diseñado para probar la app: 
-https://docs.google.com/spreadsheets/d/1Uy02barq4vHEt10XCNKzrZOC_6T3MA73K-DrwuCxX9I/edit?usp=sharing
+https://drive.google.com/drive/folders/1FsVFmW5G724rWtC8RYz0GGjbrfadD0F3?usp=sharing
